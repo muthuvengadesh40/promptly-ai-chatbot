@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+genai.configure(api_key=os.getenv("REACT_APP_GEMINI_API_KEY"))
 
 # Create the model
 generation_config = {
