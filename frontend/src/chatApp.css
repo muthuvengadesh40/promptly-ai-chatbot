@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  font-family: 'Inter', sans-serif;
+  color: #e0e0e0;
+  overflow: hidden;
+}
+
+.chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  padding: 16px;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.chat-container.centered {
+  justify-content: center;
+}
+
+.chat-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #00ffff;
+  margin: 16px 0;
+  text-shadow: 0 0 8px #00ffffaa;
+  transition: all 0.3s ease;
+}
+
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 240px;
+  scroll-behavior: smooth;
+}
+
+/* Chat Bubbles */
+.chat-bubble {
+  width: fit-content;
+  max-width: 80%;
+  padding: 12px 18px;
+  border-radius: 20px;
+  margin: 4px 0;
+  line-height: 1.5;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.1);
+  animation: fadeIn 0.3s ease;
+  font-size: 15px;
+}
+
+/* User (right side) */
+.chat-bubble.user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #00ffff33, #00ffff88);
+  color: #fff;
+  border-top-right-radius: 0;
+  text-align: left;
+}
+
+/* Bot (left side) */
+.chat-bubble.bot {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #9900cc55, #9900ccaa);
+  color: #fff;
+  border-top-left-radius: 0;
+  text-align: left;
+}
+
+/* Chat Input Section */
+.chat-input-section {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  background-color: #1a1a1a;
+  color: white;
+  outline: none;
+  margin-right: 12px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.15);
+}
+
+.chat-send-btn {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 10px;
+  background-color: #00ffff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chat-send-btn:hover {
+  background-color: #00cccc;
+}
+
+/* Footer */
+.powered-by {
+  font-size: 0.75rem;
+  color: #8affef;
+  font-style: italic;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.powered-by a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.powered-by a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar styling (optional) */
+.chat-window {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 240px;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* ⬅️ This makes bot messages align left */
+  }
+  
+
+.chat-window::-webkit-scrollbar-thumb {
+  background-color: #00ffff99;
+  border-radius: 10px;
+}
+
